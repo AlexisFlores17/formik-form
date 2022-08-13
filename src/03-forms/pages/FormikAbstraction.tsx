@@ -1,8 +1,11 @@
 import {  Formik, Form, Field, ErrorMessage } from "formik";
 import "../styles/styles.css";
 import * as Yup from "yup";
+import { MyTextInput } from "../components/MyTextInput";
+import { MySelect } from "../components/MySelect";
+import { MyCheckbox } from "../components/MyCheckbox";
 
-export const FormikComponents = () => {
+export const FormikAbstraction = () => {
   return (
     <div>
       <h1>Formik Components</h1>
@@ -31,35 +34,21 @@ export const FormikComponents = () => {
       >
         {(formik) => (
           <Form>
-            <label htmlFor="firstName">First Name</label>
-            <Field name="firstName" type="text" />
-            <ErrorMessage name="firstName" component="span" />
+            <MyTextInput name="firstName" label="First Name" placeholder="Nombre" />
 
-            <label htmlFor="lastName">Last Name</label>
-            <Field name="lastName" type="text" />
-            <ErrorMessage name="lastName" component="span" />
+            <MyTextInput name="lastName" label="Last Name" placeholder="Apellido" />
 
-            <label htmlFor="email">Email</label>
-            <Field name="email" type="email" />
-            <ErrorMessage name="email" component="span" />
+            <MyTextInput name="email" label="Email" placeholder="example@email.com" type="email" />
 
-            <label htmlFor="jobType">Job Type</label>
-            <Field name="jobType" as="select">
+            <MySelect label={"Job Type"} name={"jobType"}  >
               <option value="">Pick something</option>
               <option value="developer">Developer</option>
               <option value="designer">Designer</option>
               <option value="it-senior">IT senior</option>
-              <option value="it-jr">IT jr</option>
-            </Field>
-            <ErrorMessage name="jobType" component="span" />
+              <option value="it-jr">IT jr</option>              
+            </MySelect>
 
-            <label>
-              <Field name="terms" type="checkbox" />
-              Terms and conditions
-            </label>
-
-            <ErrorMessage name="terms" component="span" />
-
+            <MyCheckbox label={"Termns and conditions"} name={"terms"} />
             <button type="submit">Submit</button>
           </Form>
         )}
