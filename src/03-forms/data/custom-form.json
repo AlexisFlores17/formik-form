@@ -1,0 +1,23 @@
+[
+    {
+        "type":"input",
+        "name":"firstName",
+        "placeholder":"Name",
+        "label":"First Name",
+        "value":""
+    },
+    {
+        "type":"input",
+        "name":"lastName",
+        "placeholder":"Last Name",
+        "label":"Last Name",
+        "value":""
+    },
+    {
+        "type":"email",
+        "name":"email",
+        "placeholder":"correo@mail.com",
+        "label":"Email",
+        "value":""
+    }
+]
